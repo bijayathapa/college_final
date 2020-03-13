@@ -1,0 +1,13 @@
+sudo su - postgres
+psql
+drop database minor;
+drop role minor;
+
+create database minor;
+create user minor with password 'minor';
+
+
+
+
+python manage.py migrate
+python manage.py createsuperuser
